@@ -19,14 +19,22 @@ function App() {
         <Container>
           <SpaceBetween size="s">
             <form
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault()
                 console.log(e)
                 console.log(link)
                 const data: LinkShortenerLink = {
                   url: link,
                 }
-                console.log(data)
+                const result = await fetch('https://dash.brnr.link/api/add', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                    // Authorization: `Bearer ${localStorage.getItem('token')}`,
+                  },
+                  body: JSON.stringify(data),
+                })
+                console.log(result)
               }}
             >
               <Form
