@@ -15,6 +15,8 @@ function App() {
   const [link, setLink] = useState('')
   const [name, setName] = useState('')
   const [visible, setVisible] = useState(false)
+  const [resURL, setResURL] = useState('')
+  const [resLink, setResLink] = useState('')
   return (
     <AppLayout
       contentHeader={<Header variant="h1">Link Shortener Dashboard</Header>}
@@ -42,6 +44,8 @@ function App() {
                   body: JSON.stringify(data),
                 })
                 const status = await result.json()
+                setResLink(status.link)
+                setResURL(status.url)
                 console.log(status)
               }}
             >
@@ -82,11 +86,11 @@ function App() {
           type="success"
           header="Link added"
         >
-          <Link external href={`https://s.brnr.link/${name}`}>
-            {`/${name}`}
+          <Link external href={`https://s.brnr.link${resLink}`}>
+            {resLink}
           </Link>
           {' now redirects to '}
-          <Link external href={link}>
+          <Link external href={resURL}>
             {link}
           </Link>
         </Alert>
