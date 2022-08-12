@@ -7,6 +7,8 @@ extends:
   - plugin:react/recommended
   - plugin:@typescript-eslint/recommended
   - prettier
+  - react-app
+  - react-app/jest
 
 parser: '@typescript-eslint/parser'
 
