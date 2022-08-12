@@ -8,10 +8,13 @@ import Button from '@cloudscape-design/components/button'
 import AppLayout from '@cloudscape-design/components/app-layout'
 import Form from '@cloudscape-design/components/form'
 import FormField from '@cloudscape-design/components/form-field'
+import Alert from '@cloudscape-design/components/alert'
+import Link from '@cloudscape-design/components/link'
 
 function App() {
   const [link, setLink] = useState('')
-  // const [name, setName] = useState('')
+  const [name, setName] = useState('')
+  const [visible, setVisible] = useState(false)
   return (
     <AppLayout
       contentHeader={<Header variant="h1">Link Shortener Dashboard</Header>}
@@ -26,6 +29,10 @@ function App() {
                 const data: LinkShortenerLink = {
                   url: link,
                 }
+                if (name.match(/.+/)) {
+                  data.name = name
+                }
+                setVisible(true)
                 const result = await fetch('https://dash.brnr.link/api/add', {
                   method: 'POST',
                   headers: {
@@ -34,7 +41,8 @@ function App() {
                   },
                   body: JSON.stringify(data),
                 })
-                console.log(result)
+                const status = await result.json()
+                console.log(status)
               }}
             >
               <Form
@@ -48,6 +56,12 @@ function App() {
                   </SpaceBetween>
                 }
               >
+                <FormField label="Name">
+                  <Input
+                    value={name}
+                    onChange={(event) => setName(event.detail.value)}
+                  />
+                </FormField>
                 <FormField label="Link">
                   <Input
                     value={link}
@@ -58,6 +72,24 @@ function App() {
             </form>
           </SpaceBetween>
         </Container>
+      }
+      notifications={
+        <Alert
+          onDismiss={() => setVisible(false)}
+          visible={visible}
+          dismissAriaLabel="Close alert"
+          dismissible
+          type="success"
+          header="Link added"
+        >
+          <Link external href={`https://s.brnr.link/${name}`}>
+            {`/${name}`}
+          </Link>
+          {' now redirects to '}
+          <Link external href={link}>
+            {link}
+          </Link>
+        </Alert>
       }
       navigationHide={true}
       toolsHide={true}
