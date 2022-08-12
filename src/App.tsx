@@ -34,7 +34,6 @@ function App() {
                 if (name.match(/.+/)) {
                   data.name = name
                 }
-                setVisible(true)
                 const result = await fetch('https://dash.brnr.link/api/add', {
                   method: 'POST',
                   headers: {
@@ -46,6 +45,7 @@ function App() {
                 const status = await result.json()
                 setResLink(status.link)
                 setResURL(status.url)
+                setVisible(true)
                 console.log(status)
               }}
             >
