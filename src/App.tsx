@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
-import '@cloudscape-design/global-styles/index.css'
-import Header from '@cloudscape-design/components/header'
-import Container from '@cloudscape-design/components/container'
-import SpaceBetween from '@cloudscape-design/components/space-between'
-import Input from '@cloudscape-design/components/input'
-import Button from '@cloudscape-design/components/button'
+import Alert from '@cloudscape-design/components/alert'
 import AppLayout from '@cloudscape-design/components/app-layout'
+import Button from '@cloudscape-design/components/button'
+import Container from '@cloudscape-design/components/container'
 import Form from '@cloudscape-design/components/form'
 import FormField from '@cloudscape-design/components/form-field'
-import Alert from '@cloudscape-design/components/alert'
+import Header from '@cloudscape-design/components/header'
+import Input from '@cloudscape-design/components/input'
 import Link from '@cloudscape-design/components/link'
+import SpaceBetween from '@cloudscape-design/components/space-between'
+import '@cloudscape-design/global-styles/index.css'
+import React, { useState } from 'react'
 
 function App() {
   const [link, setLink] = useState('')
@@ -87,7 +87,7 @@ function App() {
           header="Link added"
         >
           <Link external href={`https://s.brnr.link${resLink}`}>
-            {resLink}
+            {`https://s.brnr.link${resLink}`}
           </Link>
           {' now redirects to '}
           <Link external href={resURL}>
