@@ -26,7 +26,8 @@
     "format": "prettier --write src",
     "lint:eslint": "eslint --max-warnings=0 src",
     "lint:prettier": "prettier --check src",
-    "lint": "concurrently 'npm:lint:*'"
+    "lint": "concurrently 'npm:lint:*'",
+    "dev:pages": "wrangler pages dev build"
   },
   "eslintConfig": {
     "extends": [
