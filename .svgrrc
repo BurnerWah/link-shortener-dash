@@ -1,0 +1,7 @@
+prettier: false
+svgo: false
+svgoConfig:
+  - name: removeViewBox
+    active: false
+titleProp: true
+ref: true

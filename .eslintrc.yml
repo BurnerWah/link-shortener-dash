@@ -5,22 +5,21 @@ env:
 extends:
   - eslint:recommended
   - plugin:react/recommended
-  - plugin:@typescript-eslint/recommended
   - prettier
   - react-app
   - react-app/jest
-
-parser: '@typescript-eslint/parser'
+  - typescript
+  - typescript/react
 
 parserOptions:
-  ecmaFeatures:
-    jsx: true
   ecmaVersion: latest
   sourceType: module
 
 plugins:
   - react
-  - '@typescript-eslint'
+
+ignorePatterns:
+  - build
 
 settings:
   react:
