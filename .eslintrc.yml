@@ -8,8 +8,10 @@ extends:
   - prettier
   - react-app
   - react-app/jest
-  - typescript
-  - typescript/react
+  - plugin:@typescript-eslint/eslint-recommended
+  - plugin:@typescript-eslint/recommended
+
+parser: '@typescript-eslint/parser'
 
 parserOptions:
   ecmaVersion: latest
@@ -17,6 +19,7 @@ parserOptions:
 
 plugins:
   - react
+  - '@typescript-eslint'
 
 ignorePatterns:
   - build
