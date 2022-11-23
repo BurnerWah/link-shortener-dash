@@ -1,0 +1,15 @@
+# See: https://github.com/restyled-io/restyled.io/wiki/Configuring-Restyled
+
+enabled: true
+pull_requests: true
+
+ignore_branches:
+  - renovate/*
+  - dependabot/*
+
+restylers:
+  - prettier
+  - prettier-json
+  - prettier-markdown
+  - prettier-yaml
+  - whitespace
