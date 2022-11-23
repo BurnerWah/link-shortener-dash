@@ -9,7 +9,7 @@ import Input from '@cloudscape-design/components/input'
 import Link from '@cloudscape-design/components/link'
 import SpaceBetween from '@cloudscape-design/components/space-between'
 import '@cloudscape-design/global-styles/index.css'
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 function App() {
   const [link, setLink] = useState('')
