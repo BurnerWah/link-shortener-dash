@@ -54,7 +54,8 @@
     "react-resizable": "^3.0.4",
     "typescript": "^4.9.3",
     "vite": "^3.2.4",
-    "vite-plugin-checker": "^0.5.1"
+    "vite-plugin-checker": "^0.5.1",
+    "vite-plugin-qrcode": "^0.2.0"
   },
   "overrides": {
     "react-resizable": "$react-resizable",
