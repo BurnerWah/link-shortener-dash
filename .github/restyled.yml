@@ -12,4 +12,3 @@ restylers:
   - prettier-json
   - prettier-markdown
   - prettier-yaml
-  - whitespace
