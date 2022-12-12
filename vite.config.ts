@@ -1,4 +1,4 @@
-import react from '@vitejs/plugin-react'
+import react from '@vitejs/plugin-react-swc'
 import postcssNormalize from 'postcss-normalize'
 import { defineConfig } from 'vite'
 
