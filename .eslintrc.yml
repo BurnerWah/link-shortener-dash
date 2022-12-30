@@ -1,3 +1,5 @@
+root: true
+
 env:
   browser: true
   es2021: true
@@ -7,9 +9,10 @@ extends:
   - plugin:react/recommended
   - plugin:react/jsx-runtime
   - prettier
-  - react-app
   - plugin:@typescript-eslint/eslint-recommended
   - plugin:@typescript-eslint/recommended
+  - plugin:jsx-a11y/recommended
+  - plugin:react-hooks/recommended
 
 parser: '@typescript-eslint/parser'
 
@@ -20,6 +23,8 @@ parserOptions:
 plugins:
   - react
   - '@typescript-eslint'
+  - jsx-a11y
+  - react-hooks
 
 ignorePatterns:
   - build
@@ -29,7 +34,9 @@ settings:
   react:
     version: detect
 
-rules: {}
+rules:
+  react/jsx-uses-vars: warn
+  react/jsx-uses-react: warn
 
 overrides:
   - files: ['*.config.ts', '*.config.js']
